@@ -1,0 +1,13 @@
+<div *ngIf="palette.length > 0" class="flex w-100 h-full">
+  <div *ngFor="let colors of palette" class="w-full h-full flex flex-col">
+    <div *ngFor="let color of colors" class="flex-1">
+      <div
+        (click)="copyToClipboard(color, colorCode)"
+        [style.backgroundColor]="color"
+        class="h-full flex items-center justify-center cursor-pointer"
+      >
+        <div #colorCode class="text-xs font-normal">{{ color }}</div>
+      </div>
+    </div>
+  </div>
+</div>
